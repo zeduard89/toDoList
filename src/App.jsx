@@ -1,6 +1,7 @@
 import './App.css'
 import Cards from './components/Cards/Cards'
 import Nav from './components/Nav/Nav'
+import Form from './components/Form/Form'
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
         <h1>Title</h1>
         
         {/* Input  newTask, maneja estado para obtener info, enviarla a Card */}
-        <form action="">form</form>
+        <Form/>
 
         {/* recibe task={task} de form */}
         <Cards/>
