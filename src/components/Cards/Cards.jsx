@@ -7,9 +7,19 @@ const Card = () => {
 //button borrar elimina la card por id
 //card recibe un textarea con la info del form
 
-
   return (
-    <div className='card'>Card</div>
+    <div className='card'>
+
+      {/* {
+      task.map((card)=>{
+        return(
+          <h1>card.title</h1>
+          <p>card.text</p>
+        )
+      })
+      } */}
+    
+    </div>
   )
 }
 
