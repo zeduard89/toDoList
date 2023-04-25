@@ -3,7 +3,7 @@ import './Nav.Module.css'
 
 const Nav = () => {
   return (
-    <div className="divNav"> Nav</div>
+    <div className="divNav"> TO DO LIST</div>
   )
 }
 

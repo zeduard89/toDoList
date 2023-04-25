@@ -1,10 +1,50 @@
-.card{
-    border-style: solid;
-    border-radius: .5rem;
-    width: 10rem;
-    height: 10rem;
+.card{   
+    width: 433px;
+    height: 312px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 2rem;
+    padding-top: 20px;
+    margin-top: 0px;
+    gap: 10px;
+    background-color: var(--colorFondo); 
+    align-items: center; 
+}
+
+.contenedorTarea{
+    background-color: var(--colorFondo);
+    width: 416px;
+    height: 91px;
+    box-shadow: 1px 2px 6px rgba(96, 96, 96, 0.5);
+    margin-top: 0px;
+    border-radius: 5px;
+    display: flex;
+}
+
+.tareas{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.tarea{
+    margin-left: 3px;
+    font-weight: bold;
+    font-family: var(--fuente);
+}
+.descripcion{
+    margin-left: 28px;   
+    font-family: var(--fuente);
+    font-weight: 300;    
+}
+
+.botonEliminar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 10px;
+}
+.EliminarIcono{
+    width: 20px;
+    height: 20px;
+    color: var(--acento); 
 }

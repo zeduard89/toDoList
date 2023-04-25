@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-
+import './Form.Module.css'
 
 const Form = () => {
 
@@ -19,6 +19,9 @@ const handleOnChange=(event)=>{
     })
 }
 
+const handleSubmit = (e) => {
+  e.preventDefault();
+}
 
 const handleOnClick=()=>{
   setTask(
@@ -29,11 +32,11 @@ const handleOnClick=()=>{
 
 console.log(task);
   return (
-    <div>
-    <input name='title'type="text" onChange={handleOnChange} value={input.title} />
-    <input name='text'type="text" onChange={handleOnChange} value={input.text} />
-    <button onClick={handleOnClick}>Botton</button>
-    </div>
+    <form className='cont' onSubmit ={handleSubmit}>
+      <input className='task' name='title'type="text" onChange={handleOnChange} value={input.title} placeholder=' New Task' />
+      <input className='description' name='text'type="text" onChange={handleOnChange} value={input.text} placeholder=' Description' />
+      <button className='button' onClick={handleOnClick}>ADD</button>
+    </form>
   )
 }
 

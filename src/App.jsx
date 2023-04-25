@@ -13,9 +13,9 @@ function App() {
       <div className="App">
         <Nav/>
         <div className='body'>
-          <h1>Title</h1>
-          <Form/>
+          <h1>TASKS</h1>
           <Cards/>
+          <Form/>          
         </div>
       </div>
     

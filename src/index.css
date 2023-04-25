@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Mulish:wght@600;800&family=Nunito&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&family=Mulish:wght@600;800&family=Nunito&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+
+:root {
+    --colorFondo: #F9F9F9;
+    --acento: #BF8709;;
+    --grisOscuro: #5E6072;
+    --grisClaro: #E7E4E3;
+
+    --fuente: 'Montserrat', sans-serif;
+}

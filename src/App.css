@@ -5,14 +5,39 @@
    
 } */
 
-.body{
-  background-color: rgb(22, 247, 30);
-  border-bottom-left-radius:2rem;
-  border-bottom-right-radius:2rem;
-  margin: 0;
-  width: 100%;
-  height: fit-content;
+.App{
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
 }
+
+.body{
+  background-color: var(--grisClaro);
+  border-bottom-left-radius:1rem;
+  border-bottom-right-radius:1rem;
+  margin: 0;
+  width: 461px;
+  height: 625px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  
+  
+}
+
+.body h1{
+  background-color: var(--grisOscuro);
+  color: white;
+  width: 429px;
+  height: 55px;
+  display: flex;
+  padding-left: 5px;
+  align-items: center;
+  margin-bottom: 0px;
+  font-size: 1em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
