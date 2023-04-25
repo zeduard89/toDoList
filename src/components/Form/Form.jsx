@@ -35,6 +35,7 @@ console.log(task);
   return (
     <>
     <Cards task={task}/>
+
     <form className='cont' onSubmit ={handleSubmit}>
       <input className='task' name='title'type="text" onChange={handleOnChange} value={input.title} placeholder=' New Task' />
       <input className='description' name='text'type="text" onChange={handleOnChange} value={input.text} placeholder=' Description' />
