@@ -14,7 +14,7 @@ function App() {
         <Nav/>
         <div className='body'>
           <h1>TASKS</h1>
-          <Cards/>
+          {/* <Cards/> */}
           <Form/>          
         </div>
       </div>
