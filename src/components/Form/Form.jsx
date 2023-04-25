@@ -11,7 +11,7 @@ const [input,setInput]= useState({
 
 });
 
-let [task,setTask]= useState([{title:'Tarea 1', text: 'Arrancar con la tarea 1.'}])
+let [task,setTask]= useState([{id:'1', title:'Tarea 1', text: 'Arrancar con la tarea 1.'}])
 
 const handleOnChange=(event)=>{
     setInput({
