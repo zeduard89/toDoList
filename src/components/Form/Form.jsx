@@ -5,13 +5,12 @@ import Cards from '../Cards/Cards';
 const Form = () => {
 
 const [input,setInput]= useState({
-    id: Date.now(),
     title:'',
     text:''
 
 });
 
-let [task,setTask]= useState([{id:'1', title:'Tarea 1', text: 'Arrancar con la tarea 1.'}])
+let [task,setTask]= useState([{id:1,title:'title',text:'text'}])
 
 const handleOnChange=(event)=>{
     setInput({
@@ -25,10 +24,15 @@ const handleSubmit = (e) => {
   e.preventDefault();
 }
 
+//Correcion del formato para que toma un id cada vez que llame
+
 const handleOnClick=()=>{
   setTask(
-    task= [...task,input]
-  )
+    task = [...task,{
+    id:Date(),
+    title:input.title,
+    text:input.text}
+    ])
 }
 
 
