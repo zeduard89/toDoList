@@ -18,6 +18,7 @@
     margin-top: 0px;
     border-radius: 5px;
     display: flex;
+    
 }
 
 .tareas{
@@ -30,18 +31,24 @@
     margin-left: 3px;
     font-weight: bold;
     font-family: var(--fuente);
+    width: 350px;
+    
 }
 .descripcion{
     margin-left: 28px;   
     font-family: var(--fuente);
     font-weight: 300;    
+    height: 50px;
+    width: 320px;    
 }
 
 .botonEliminar{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center;   
     padding-right: 10px;
+    padding-left: 10px;
+    align-items: center;
 }
 .EliminarIcono{
     width: 20px;
