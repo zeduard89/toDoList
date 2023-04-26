@@ -5,7 +5,7 @@ import Cards from '../Cards/Cards';
 const Form = () => {
 
 const [input,setInput]= useState({
-    id: new Date().getTime(),
+    id: Date.now(),
     title:'',
     text:''
 
