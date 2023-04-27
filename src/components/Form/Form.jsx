@@ -12,6 +12,20 @@ const [input,setInput]= useState({
 
 let [task,setTask]= useState([{id:1,title:'title',text:'text'}])
 
+
+
+// Resetea el Formulario de Ingreso de Tarea
+const resetInput = () => {
+  setInput({ title:'', text:'' });
+};
+
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+  resetInput()
+}
+
+
 const handleOnChange=(event)=>{
     setInput({
         ...input,
@@ -20,9 +34,7 @@ const handleOnChange=(event)=>{
     })
 }
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-}
+
 
 //Correcion del formato para que toma un id cada vez que llame
 
