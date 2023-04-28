@@ -1,7 +1,7 @@
 import React from 'react'
 import './Cards.Module.css'
 
-const Card = ({task, onClicked =(data)=>{}}) => {
+const Card = ({task,toggleTask, removeTask, onClicked =(data)=>{}}) => {
 
 //button check, maneja estado con true o false
 //button borrar elimina la card por id
@@ -17,10 +17,10 @@ const Card = ({task, onClicked =(data)=>{}}) => {
           <div className='contenedorTarea'>
   
           <div className='tareas'>
-            <div className='tarea'><input type="checkbox" /> {card.title}</div>            
+            <div className='tarea'><input type="checkbox" onClick={(e)=>{toggleTask(card.id)}}/> {card.title}</div>            
             <div className='descripcion'>{card.text}</div>
           </div>
-          <button onClick={(e)=>{onClicked(card)}}>
+          <button onClick={(e)=>{removeTask(card.id)}}>
           <div className='botonEliminar' onClick={(e)=>{onClicked(card)}}>
             <div className='EliminarIcono' >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-2 h-6">

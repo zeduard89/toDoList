@@ -5,8 +5,10 @@ import Cards from '../Cards/Cards';
 const Form = () => {
 
 const [input,setInput]= useState({
+    id:'',
     title:'',
-    text:''
+    text:'',
+    completed:'false'
 
 });
 
@@ -34,6 +36,17 @@ const handleOnChange=(event)=>{
     })
 }
 
+const removeTask = (id) => {
+    const newState = task.filter((tarea) => tarea.id !== id);
+    setTask(newState);
+  };
+
+  const toggleTask = (id) => {
+    const draft = structuredClone(task);
+    const tarea = draft.find((tarea) => tarea.id === id);
+    tarea.completed = !tarea.completed;
+    setTask(draft);
+  };
 
 
 //Correcion del formato para que toma un id cada vez que llame
@@ -51,7 +64,12 @@ const handleOnClick=()=>{
 console.log(task);
   return (
     <>
-    <Cards task={task}/>
+    <Cards 
+    key={task.id}
+    task={task}
+    removeTask={removeTask}
+    toggleTask={toggleTask}
+    />
 
     <form className='cont' onSubmit ={handleSubmit}>
       <input className='task' name='title'type="text" onChange={handleOnChange} value={input.title} placeholder=' New Task' />
