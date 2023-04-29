@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './Cards.Module.css'
 
 const Card = ({task,toggleTask, removeTask, onClicked =(data)=>{}}) => {
@@ -7,17 +7,45 @@ const Card = ({task,toggleTask, removeTask, onClicked =(data)=>{}}) => {
 //button borrar elimina la card por id
 //card recibe un textarea con la info del form
 
+
+// const [taskColors, setTaskColors] = useState({});
+
+// const handleClick = (id) => {
+//   const newTaskColors = { ...taskColors };
+//   if (newTaskColors[id]) {
+//     delete newTaskColors[id];
+//   } else {
+//     newTaskColors[id] = 'rgba(0, 255, 34, 0.295)';
+//   }
+//   setTaskColors(newTaskColors);
+// };
+
+const [backgroundColor,setbackgroundColor] = useState('backgroundColor:rgba(255, 17, 0, 0.411)');
+const [color,setColor] = useState(false)
+const handleClick = (id) => {
+  if (color) {
+    setbackgroundColor('rgba(255, 17, 0, 0.411)')
+    setColor(!color)
+  } else {
+    setbackgroundColor('rgba(0, 255, 34, 0.295)')
+    setColor(!color)
+  }
+}
+
+
   return (
-    <div className='card'>
+    <div className='card' >
 
       {
       task.map((card)=>{
         return(
 
-          <div className='contenedorTarea'>
+          //<div key={card.id} className='contenedorTarea' style={{ backgroundColor: taskColors[card.id] || 'rgba(255, 17, 0, 0.411)' }} >
+          <div key={card.id} className='contenedorTarea' style={backgroundColor[card.id] } >
+  
   
           <div className='tareas'>
-            <div className='tarea'><input type="checkbox" onClick={(e)=>{toggleTask(card.id)}}/> {card.title}</div>            
+            <div className='tarea'><input type="checkbox" onClick={(e)=>toggleTask(card.id)} onChange={() => handleClick(card.id)}/> {card.title}</div>            
             <div className='descripcion'>{card.text}</div>
           </div>
           <button onClick={(e)=>{removeTask(card.id)}}>
