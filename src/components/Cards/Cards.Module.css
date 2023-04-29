@@ -40,7 +40,8 @@
     font-family: var(--fuente);
     font-weight: 300;    
     height: 50px;
-    width: 320px;    
+    width: 320px;
+    border:none;
 }
 
 .botonEliminar{

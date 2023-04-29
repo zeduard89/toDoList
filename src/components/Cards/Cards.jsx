@@ -8,30 +8,21 @@ const Card = ({task,toggleTask, removeTask, onClicked =(data)=>{}}) => {
 //card recibe un textarea con la info del form
 
 
-// const [taskColors, setTaskColors] = useState({});
-
-// const handleClick = (id) => {
-//   const newTaskColors = { ...taskColors };
-//   if (newTaskColors[id]) {
-//     delete newTaskColors[id];
-//   } else {
-//     newTaskColors[id] = 'rgba(0, 255, 34, 0.295)';
-//   }
-//   setTaskColors(newTaskColors);
-// };
-
-const [backgroundColor,setbackgroundColor] = useState('backgroundColor:rgba(255, 17, 0, 0.411)');
-const [color,setColor] = useState(false)
+const [taskColors, setTaskColors] = useState({});
+//Guardo en newTask el estado anterior(en la primera pasada no existe ninguno) asi que paso al ELSE
+// en la segunda pasada Existe asi que entra el If y lo borra, vuelve el RED
 const handleClick = (id) => {
-  if (color) {
-    setbackgroundColor('rgba(255, 17, 0, 0.411)')
-    setColor(!color)
+  const newTaskColors = { ...taskColors };
+  if (newTaskColors[id]) {
+    delete newTaskColors[id];
   } else {
-    setbackgroundColor('rgba(0, 255, 34, 0.295)')
-    setColor(!color)
+    newTaskColors[id] = 'rgba(0, 255, 34, 0.295)';
   }
-}
+  setTaskColors(newTaskColors);
+};
 
+//Cambio el background por medio de su Style, uso un OR para comenzar con el red ya que al principio no tiene nungun valor background (div ContenedorTarea)
+//Usa un onChange para ejecutar la fun onClick (envio card.id)
 
   return (
     <div className='card' >
@@ -39,14 +30,12 @@ const handleClick = (id) => {
       {
       task.map((card)=>{
         return(
-
-          //<div key={card.id} className='contenedorTarea' style={{ backgroundColor: taskColors[card.id] || 'rgba(255, 17, 0, 0.411)' }} >
-          <div key={card.id} className='contenedorTarea' style={backgroundColor[card.id] } >
-  
-  
+          
+          <div key={card.id} className='contenedorTarea' style={{ backgroundColor: taskColors[card.id] || 'rgba(255, 17, 0, 0.411)' }} >
           <div className='tareas'>
             <div className='tarea'><input type="checkbox" onClick={(e)=>toggleTask(card.id)} onChange={() => handleClick(card.id)}/> {card.title}</div>            
-            <div className='descripcion'>{card.text}</div>
+            <textarea  className='descripcion' style={{backgroundColor:'rgba(255, 17, 0, 0)' }} name="" id="" cols="30" rows="10">{card.text}</textarea>
+            {/* <div className='descripcion' >{card.text}</div> */}
           </div>
           <button onClick={(e)=>{removeTask(card.id)}}>
           <div className='botonEliminar' onClick={(e)=>{onClicked(card)}}>
